@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>R1LIKE - Buy Free Fire Likes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R1LIKE – Buy Free Fire Likes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
     body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      background: #0f0f0f;
       color: #fff;
       text-align: center;
       padding: 20px;
+      transition: all 0.3s ease;
     }
-    h1 {
-      color: #4da6ff;
-      text-shadow: 0 0 10px #4da6ff;
+
+    body.light {
+      background: #f5f5f5;
+      color: #111;
     }
+
+    .hidden { display: none; }
+
+    h1 { color: #4da6ff; text-shadow: 0 0 10px #4da6ff; }
+
     .membership-card {
       display: inline-block;
       background: #222;
@@ -26,11 +33,25 @@
       padding: 20px;
       width: 280px;
       box-shadow: 0 0 15px rgba(77, 166, 255, 0.5);
+      animation: fadeInUp 0.8s ease-in-out;
+      position: relative;
     }
+
+    body.light .membership-card {
+      background: #fff;
+      color: #000;
+      border-color: #3399ff;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     .vip-badge {
       position: absolute;
-      top: 730px;
-      right: 40px;
+      top: 10px;
+      right: 15px;
       background: gold;
       color: black;
       padding: 4px 10px;
@@ -38,6 +59,7 @@
       font-weight: bold;
       box-shadow: 0 0 10px gold;
     }
+
     .buy-button {
       display: inline-block;
       margin-top: 12px;
@@ -48,11 +70,44 @@
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease-in-out;
     }
+
     .buy-button:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
+      background-color: #3399ff;
+      box-shadow: 0 0 15px #4da6ff;
     }
+
+    .calculator {
+      margin-top: 40px;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      border: 2px solid #4da6ff;
+    }
+
+    body.light .calculator {
+      background: #fff;
+      color: #000;
+      border-color: #3399ff;
+    }
+
+    input[type="range"] { width: 250px; }
+
+    .digits {
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: 700;
+      font-size: 1.3em;
+      letter-spacing: 1.5px;
+      color: #4da6ff;
+    }
+
+    body.light .digits {
+      color: #0070cc;
+    }
+
     .social-proof {
       margin-top: 30px;
       background: #111;
@@ -63,6 +118,13 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    body.light .social-proof {
+      background: #fff;
+      color: #000;
+      border-color: #ccc;
+    }
+
     .whatsapp-badge {
       margin-top: 20px;
       display: inline-block;
@@ -73,40 +135,179 @@
       font-weight: bold;
       box-shadow: 0 0 10px #25D366;
     }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #25D366;
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 250px;
+      margin-top: 20px;
+    }
+
+    #uidSection button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4da6ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #displayUid {
+      font-size: 1.2em;
+      margin: 20px auto;
+      background: #111;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 2px solid #4da6ff;
+    }
+
+    body.light #displayUid {
+      background: #fff;
+      color: #000;
+    }
+
+    #modeToggle {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      padding: 8px 16px;
+      background: #4da6ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+    }
   </style>
 </head>
 <body>
-  <h1>🔥 R1LIKE – Buy Free Fire Likes</h1>
 
-  <div class="membership-card">
-    <h2>100 Likes</h2>
-    <p>Price: <strong>10৳</strong></p>
-    <p>1 Day · 100 Likes</p>
-    <a class="buy-button" href="https://wa.me/88001755850613?text=I%20want%20100%20likes" target="_blank">Buy Now</a>
+  <button id="modeToggle">Light Mode</button>
+
+  <div id="uidSection">
+    <h1>Enter Your Free Fire UID</h1>
+    <input type="text" id="uidInput" placeholder="e.g. 4840062404" />
+    <br>
+    <button onclick="start()">Start</button>
   </div>
 
-  <div class="membership-card">
-    <div class="vip-badge">🔥 Hot</div>
-    <h2>700 Likes</h2>
-    <p>Price: <strong>50৳</strong></p>
-    <p>7 Days · 100 Likes/Day</p>
-    <a class="buy-button" href="https://wa.me/88001755850613?text=I%20want%20weekly%20like%20membership" target="_blank">Buy Now</a>
+  <div id="mainContent" class="hidden">
+    <h1>🔥 R1LIKE – Buy Free Fire Likes</h1>
+    <div id="displayUid"></div>
+
+    <div class="membership-card">
+      <h2>🎁 Free 10 Likes</h2>
+      <p>100% Free for New Users</p>
+      <a class="buy-button" id="btnFree">Get Now</a>
+    </div>
+
+    <div class="membership-card">
+      <h2>100 Likes</h2>
+      <p>Price: <strong>10৳</strong></p>
+      <p>1 Day · 100 Likes</p>
+      <a class="buy-button" id="btn10">Buy Now</a>
+    </div>
+
+    <div class="membership-card">
+      <div class="vip-badge">🔥 Hot</div>
+      <h2>700 Likes</h2>
+      <p>Price: <strong>50৳</strong></p>
+      <p>7 Days · 100 Likes/Day</p>
+      <a class="buy-button" id="btn50">Buy Now</a>
+    </div>
+
+    <div class="membership-card">
+      <div class="vip-badge">🥇 VIP</div>
+      <h2>3000 Likes</h2>
+      <p>Price: <strong>180৳</strong></p>
+      <p>30 Days · 100 Likes/Day</p>
+      <a class="buy-button" id="btn180">Buy Now</a>
+    </div>
+
+    <div class="calculator">
+      <h3>⚡Price With Like⚡</h3>
+      <label for="likeSlider">Select Price (৳):</label><br>
+      <input type="range" id="likeSlider" min="10" max="180" step="10" value="10">
+      <p id="priceOutput">Price: <span class="digits">10৳ → Likes: 100</span></p>
+      <a id="buyNowBtn" class="buy-button" href="#">Buy Now</a>
+    </div>
+
+    <div class="social-proof">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>“100% real and authentic”</p>
+      <p>“Safe and fast, 10/10!”</p>
+    </div>
+
+    <div class="whatsapp-badge">Ri Fahad</div>
+
+    <a href="https://wa.me/88001755850613" target="_blank" class="whatsapp-float">💬 Chat</a>
   </div>
 
-  <div class="membership-card">
-    <div class="vip-badge">🥇 VIP</div>
-    <h2>3000 Likes</h2>
-    <p>Price: <strong>180৳</strong></p>
-    <p>30 Days · 100 Likes/Day</p>
-    <a class="buy-button" href="https://wa.me/88001755850613?text=I%20want%20monthly%20like%20membership" target="_blank">Buy Now</a>
-  </div>
+  <script>
+    const priceToLikes = {
+      10: 100, 20: 200, 30: 400, 40: 500, 50: 700,
+      60: 800, 70: 900, 80: 1100, 90: 1200, 100: 1500,
+      110: 1600, 120: 1800, 130: 2000, 140: 2200,
+      150: 2400, 160: 2600, 170: 2800, 180: 3000,
+    };
 
-  <div class="social-proof">
-    <p>⭐⭐⭐⭐⭐</p>
-    <p>“100% real and authentic</p>
-    <p>“Safe and fast, 10/10!</p>
-  </div>
+    function start() {
+      const uid = document.getElementById("uidInput").value.trim();
+      if (!uid) return alert("Please enter your UID.");
+      document.getElementById("uidSection").classList.add("hidden");
+      document.getElementById("mainContent").classList.remove("hidden");
+      document.getElementById("displayUid").innerHTML = `UID: <span class="digits">${uid}</span>`;
+      setLinks(uid);
+    }
 
-  <div class="whatsapp-badge">Ri Fahad</div>
+    function setLinks(uid) {
+      document.getElementById("btnFree").href = getLink("Free", 10, uid);
+      document.getElementById("btn10").href = getLink(10, 100, uid);
+      document.getElementById("btn50").href = getLink(50, 700, uid);
+      document.getElementById("btn180").href = getLink(180, 3000, uid);
+
+      const slider = document.getElementById("likeSlider");
+      const output = document.getElementById("priceOutput");
+      const buyBtn = document.getElementById("buyNowBtn");
+
+      function update() {
+        const price = parseInt(slider.value);
+        const likes = priceToLikes[price] || 0;
+        output.innerHTML = `Price: <span class="digits">${price}৳ → Likes: ${likes}</span>`;
+        buyBtn.href = getLink(price, likes, uid);
+      }
+
+      slider.addEventListener("input", update);
+      update();
+    }
+
+    function getLink(price, likes, uid) {
+      return `https://wa.me/88001755850613?text=${encodeURIComponent(`I want to buy ${price}৳ ${likes} likes\nUID: ${uid}`)}`;
+    }
+
+    document.getElementById("modeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      const btn = document.getElementById("modeToggle");
+      btn.textContent = document.body.classList.contains("light") ? "Dark Mode" : "Light Mode";
+    });
+  </script>
 </body>
 </html>
