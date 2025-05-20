@@ -200,116 +200,130 @@
 </head>
 <body>
 
-  <button id="modeToggle">Light Mode</button>
+<button id="modeToggle">Light Mode</button>
 
-  <div id="uidSection">
-    <h1>Enter Your Free Fire UID</h1>
-    <input type="text" id="uidInput" placeholder="e.g. 4840062404" />
-    <br>
-    <button onclick="start()">Start</button>
+<div id="uidSection">
+  <h1>Enter Your Free Fire UID</h1>
+  <input type="text" id="uidInput" placeholder="e.g. 4840062404" />
+  <br>
+  <button onclick="start()">Start</button>
+</div>
+
+<div id="mainContent" class="hidden">
+  <h1>🔥 R1LIKE – Buy Free Fire Likes</h1>
+  <div id="displayUid"></div>
+
+  <div class="membership-card" id="giftCard">
+    <h2>🎁 Free 100 Likes</h2>
+    <p>100% Free for New Users</p>
+    <a class="buy-button" id="btnFree">Get Now</a>
   </div>
 
-  <div id="mainContent" class="hidden">
-    <h1>🔥 R1LIKE – Buy Free Fire Likes</h1>
-    <div id="displayUid"></div>
-
-    <div class="membership-card">
-      <h2>🎁 Free 100 Likes</h2>
-      <p>100% Free for New Users</p>
-      <a class="buy-button" id="btnFree">Get Now</a>
-    </div>
-
-    <div class="membership-card">
-      <h2>100 Likes</h2>
-      <p>Price: <strong>10৳</strong></p>
-      <p>1 Day · 100 Likes</p>
-      <a class="buy-button" id="btn10">Buy Now</a>
-    </div>
-
-    <div class="membership-card">
-      <div class="vip-badge">🔥 Hot</div>
-      <h2>700 Likes</h2>
-      <p>Price: <strong>50৳</strong></p>
-      <p>7 Days · 100 Likes/Day</p>
-      <a class="buy-button" id="btn50">Buy Now</a>
-    </div>
-
-    <div class="membership-card">
-      <div class="vip-badge">🥇 VIP</div>
-      <h2>3000 Likes</h2>
-      <p>Price: <strong>180৳</strong></p>
-      <p>30 Days · 100 Likes/Day</p>
-      <a class="buy-button" id="btn180">Buy Now</a>
-    </div>
-
-    <div class="calculator">
-      <h3>⚡Price With Like⚡</h3>
-      <label for="likeSlider">Select Price (৳):</label><br>
-      <input type="range" id="likeSlider" min="10" max="180" step="10" value="10">
-      <p id="priceOutput">Price: <span class="digits">10৳ → Likes: 100</span></p>
-      <a id="buyNowBtn" class="buy-button" href="#">Buy Now</a>
-    </div>
-
-    <div class="social-proof">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>“100% real and authentic”</p>
-      <p>“Safe and fast, 10/10!”</p>
-    </div>
-
-    <div class="whatsapp-badge">Ri Fahad</div>
-
-    <a href="https://wa.me/88001755850613" target="_blank" class="whatsapp-float">💬 Chat</a>
+  <div class="membership-card">
+    <h2>100 Likes</h2>
+    <p>Price: <strong>10৳</strong></p>
+    <p>1 Day · 100 Likes</p>
+    <a class="buy-button" id="btn10">Buy Now</a>
   </div>
 
-  <script>
-    const priceToLikes = {
-      10: 100, 20: 200, 30: 400, 40: 500, 50: 700,
-      60: 800, 70: 900, 80: 1100, 90: 1200, 100: 1500,
-      110: 1600, 120: 1800, 130: 2000, 140: 2200,
-      150: 2400, 160: 2600, 170: 2800, 180: 3000,
-    };
+  <div class="membership-card">
+    <div class="vip-badge">🔥 Hot</div>
+    <h2>700 Likes</h2>
+    <p>Price: <strong>50৳</strong></p>
+    <p>7 Days · 100 Likes/Day</p>
+    <a class="buy-button" id="btn50">Buy Now</a>
+  </div>
 
-    function start() {
-      const uid = document.getElementById("uidInput").value.trim();
-      if (!uid) return alert("Please enter your UID.");
-      document.getElementById("uidSection").classList.add("hidden");
-      document.getElementById("mainContent").classList.remove("hidden");
-      document.getElementById("displayUid").innerHTML = `UID: <span class="digits">${uid}</span>`;
-      setLinks(uid);
+  <div class="membership-card">
+    <div class="vip-badge">🥇 VIP</div>
+    <h2>3000 Likes</h2>
+    <p>Price: <strong>180৳</strong></p>
+    <p>30 Days · 100 Likes/Day</p>
+    <a class="buy-button" id="btn180">Buy Now</a>
+  </div>
+
+  <div class="calculator">
+    <h3>⚡Price With Like⚡</h3>
+    <label for="likeSlider">Select Price (৳):</label><br>
+    <input type="range" id="likeSlider" min="10" max="180" step="10" value="10">
+    <p id="priceOutput">Price: <span class="digits">10৳ → Likes: 100</span></p>
+    <a id="buyNowBtn" class="buy-button" href="#">Buy Now</a>
+  </div>
+
+  <div class="social-proof">
+    <p>⭐⭐⭐⭐⭐</p>
+    <p>“100% real and authentic”</p>
+    <p>“Safe and fast, 10/10!”</p>
+  </div>
+
+  <div class="whatsapp-badge">Ri Fahad</div>
+  <a href="https://wa.me/88001755850613" target="_blank" class="whatsapp-float">💬 Chat</a>
+</div>
+
+<script>
+  const priceToLikes = {
+    10: 100, 20: 200, 30: 400, 40: 500, 50: 700,
+    60: 800, 70: 900, 80: 1100, 90: 1200, 100: 1500,
+    110: 1600, 120: 1800, 130: 2000, 140: 2200,
+    150: 2400, 160: 2600, 170: 2800, 180: 3000,
+  };
+
+  function start() {
+    const uid = document.getElementById("uidInput").value.trim();
+    if (!uid) return alert("Please enter your UID.");
+    document.getElementById("uidSection").classList.add("hidden");
+    document.getElementById("mainContent").classList.remove("hidden");
+    document.getElementById("displayUid").innerHTML = `UID: <span class="digits">${uid}</span>`;
+    setLinks(uid);
+
+    // Hide gift card if already clicked
+    if (localStorage.getItem("giftClaimed") === "true") {
+      document.getElementById("giftCard").style.display = "none";
+    }
+  }
+
+  function setLinks(uid) {
+    document.getElementById("btnFree").href = getLink("Free", 10, uid);
+    document.getElementById("btn10").href = getLink(10, 100, uid);
+    document.getElementById("btn50").href = getLink(50, 700, uid);
+    document.getElementById("btn180").href = getLink(180, 3000, uid);
+
+    const slider = document.getElementById("likeSlider");
+    const output = document.getElementById("priceOutput");
+    const buyBtn = document.getElementById("buyNowBtn");
+
+    function update() {
+      const price = parseInt(slider.value);
+      const likes = priceToLikes[price] || 0;
+      output.innerHTML = `Price: <span class="digits">${price}৳ → Likes: ${likes}</span>`;
+      buyBtn.href = getLink(price, likes, uid);
     }
 
-    function setLinks(uid) {
-      document.getElementById("btnFree").href = getLink("Free", 10, uid);
-      document.getElementById("btn10").href = getLink(10, 100, uid);
-      document.getElementById("btn50").href = getLink(50, 700, uid);
-      document.getElementById("btn180").href = getLink(180, 3000, uid);
+    slider.addEventListener("input", update);
+    update();
+  }
 
-      const slider = document.getElementById("likeSlider");
-      const output = document.getElementById("priceOutput");
-      const buyBtn = document.getElementById("buyNowBtn");
+  function getLink(price, likes, uid) {
+    return `https://wa.me/88001755850613?text=${encodeURIComponent(`I want to buy ${price}৳ ${likes} likes\nUID: ${uid}`)}`;
+  }
 
-      function update() {
-        const price = parseInt(slider.value);
-        const likes = priceToLikes[price] || 0;
-        output.innerHTML = `Price: <span class="digits">${price}৳ → Likes: ${likes}</span>`;
-        buyBtn.href = getLink(price, likes, uid);
-      }
+  // Gift button click handler
+  document.addEventListener("DOMContentLoaded", () => {
+    const giftBtn = document.getElementById("btnFree");
+    giftBtn?.addEventListener("click", () => {
+      localStorage.setItem("giftClaimed", "true");
+      document.getElementById("giftCard").style.display = "none";
+    });
 
-      slider.addEventListener("input", update);
-      update();
-    }
-
-    function getLink(price, likes, uid) {
-      return `https://wa.me/88001755850613?text=${encodeURIComponent(`I want to buy ${price}৳ ${likes} likes\nUID: ${uid}`)}`;
-    }
-
+    // Mode toggle
     document.getElementById("modeToggle").addEventListener("click", () => {
       document.body.classList.toggle("light");
       const btn = document.getElementById("modeToggle");
       btn.textContent = document.body.classList.contains("light") ? "Dark Mode" : "Light Mode";
     });
-  </script>
-  
-  <script src="//code.tidio.co/6j0h9daukkwhvhf18qjvstvkgdbrplf4.js" async></script>
+  });
+</script>
+
+<script src="//code.tidio.co/6j0h9daukkwhvhf18qjvstvkgdbrplf4.js" async></script>
 </body>
 </html>
