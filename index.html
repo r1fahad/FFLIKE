@@ -251,6 +251,17 @@
   </div>
 
   <div class="social-proof">
+    <p>আপনি যদি ৭ দিন, ১০ দিন অথবা ৩০ দিনের Free Fire Like প্যাকেজ ক্রয় করেন, তাহলে আপনার ফ্রি ফায়ার আইডিতে প্রতিদিন ১০০টি করে লাইক অটোমেটিকভাবে পৌঁছে যাবে—একবার কিনলেই নির্ধারিত দিন পর্যন্ত ১০০ লাইক প্রতিদিন যাবে।</p>
+    <ul style="text-align: left; margin: 10px auto; max-width: 400px;">
+      <li>⦿ ৭ দিনের প্যাকেজে আপনি মোট ৭০০ লাইক,</li>
+      <li>⦿ ১০ দিনের প্যাকেজে মোট ১০০০ লাইক,</li>
+      <li>⦿ ৩০ দিনের প্যাকেজে মোট ৩০০০ লাইক পাবেন।</li>
+    </ul>
+    <p>⦿ প্রতিদিন নির্দিষ্ট সময় অনুযায়ী ১০০ লাইক যুক্ত হবে, আপনাকে আলাদা করে কিছু করতে হবে না।</p>
+    <p>⦿ এই সার্ভিস একদম অটো, নির্ভরযোগ্য ও ঝামেলা-মুক্ত।</p>
+  </div>
+
+  <div class="social-proof">
     <p>⭐⭐⭐⭐⭐</p>
     <p>“100% real and authentic”</p>
     <p>“Safe and fast, 10/10!”</p>
@@ -276,7 +287,6 @@
     document.getElementById("displayUid").innerHTML = `UID: <span class="digits">${uid}</span>`;
     setLinks(uid);
 
-    // Hide gift card if already clicked
     if (localStorage.getItem("giftClaimed") === "true") {
       document.getElementById("giftCard").style.display = "none";
     }
@@ -307,7 +317,6 @@
     return `https://wa.me/88001755850613?text=${encodeURIComponent(`I want to buy ${price}৳ ${likes} likes\nUID: ${uid}`)}`;
   }
 
-  // Gift button click handler
   document.addEventListener("DOMContentLoaded", () => {
     const giftBtn = document.getElementById("btnFree");
     giftBtn?.addEventListener("click", () => {
@@ -315,7 +324,6 @@
       document.getElementById("giftCard").style.display = "none";
     });
 
-    // Mode toggle
     document.getElementById("modeToggle").addEventListener("click", () => {
       document.body.classList.toggle("light");
       const btn = document.getElementById("modeToggle");
