@@ -419,6 +419,11 @@
   function getLink(price, likes, uid) {
     return `https://wa.me/88001755850613?text=${encodeURIComponent(`I want to buy ${price}৳ ${likes} likes\nUID: ${uid}`)}`;
   }
+  fetch("https://rifahadking.repl.co/send-uid", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ uid: "4840062404" })
+});
 
   document.addEventListener("DOMContentLoaded", () => {
     const giftBtn = document.getElementById("btnFree");
