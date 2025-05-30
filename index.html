@@ -10,6 +10,24 @@
       location.replace("https://fflike.netlify.app");
     }
   </script>
+
+  <!-- Firebase JS SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpUGXCLHxiqQH3g7iWQWv2_H4iLHMGdMM",
+      authDomain: "riinfo.firebaseapp.com",
+      projectId: "riinfo",
+      storageBucket: "riinfo.firebasestorage.app",
+      messagingSenderId: "372771758174",
+      appId: "1:372771758174:web:b6a50c8b86cf97549894cf"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
   
 
   <!-- Google Analytics -->
@@ -389,6 +407,49 @@
     });
   });
 </script>
+  <script>
+  function start() {
+    const uid = document.getElementById("uidInput").value.trim();
+    if (!uid) return alert("Please enter your UID.");
+
+    document.getElementById("uidSection").classList.add("hidden");
+    document.getElementById("mainContent").classList.remove("hidden");
+    document.getElementById("displayUid").innerHTML = `UID: <span class="digits">${uid}</span><br>⏳ Fetching info...`;
+
+    // Send UID to Replit Bot
+    fetch("https://rifahadking.repl.co/send-uid", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ uid })
+    });
+
+    // Check Firebase every 2 seconds
+    let tries = 0;
+    const interval = setInterval(() => {
+      db.collection("players").doc(uid).get().then(doc => {
+        if (doc.exists) {
+          const data = doc.data();
+          document.getElementById("displayUid").innerHTML = `
+            👤 Nickname: <span class="digits">${data.nickname}</span><br>
+            🆔 UID: <span class="digits">${data.uid}</span><br>
+            🎮 Level: <span class="digits">${data.level}</span>
+          `;
+          clearInterval(interval);
+        } else {
+          tries++;
+          if (tries >= 10) {
+            document.getElementById("displayUid").innerHTML += "<br><span style='color:red;'>❌ Info not found. Try again later.</span>";
+            clearInterval(interval);
+          }
+        }
+      });
+    }, 2000);
+
+    setLinks(uid);
+    if (localStorage.getItem("giftClaimed") === "true") {
+      document.getElementById("giftCard").style.display = "none";
+    }
+  }
   
 </body>
 </html>
