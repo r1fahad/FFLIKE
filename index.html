@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FFLIKE – Premium Free Fire Likes</title>
+  <title>FFLIKE</title>
   
-  <!-- Redirect Security -->
   <script>
-    if (location.hostname !== "fflike.netlify.app") {
-      location.replace("https://fflike.netlify.app");
-    }
+    if (location.hostname !== "fflike.netlify.app") {
+      location.replace("https://fflike.netlify.app");
+    }
   </script>
+  
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHVCWQNW6N"></script>
@@ -18,759 +18,377 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-MHVCWQNW6N');
   </script>
 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FFLIKE – Buy Free Fire Likes</title>
+  
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Buy authentic Free Fire likes quickly and safely at FFLIKE. Get daily likes automatically on your Free Fire UID.">
-  <meta name="keywords" content="Free Fire Like, Free fire likes, How to get like in free fire, How to get like, R1 Like, FF Like">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Buy authentic Free Fire likes quickly and safely at FFLIKE. Get daily likes automatically on your Free Fire UID." />
+  <meta name="keywords" content="Free Fire Like, Free fire likes, How to get like in free fire, How to get like, R1 Like, FF Like" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Favicon and Meta Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="FF LIKE" />
+
+  <!-- Open Graph for social media preview -->
+  <meta property="og:title" content="You Will Get 100 Likes For Free - Try Now ">
+  <meta property="og:description" content="✅ Trusted Service | No Login Needed | Get Free Fire Likes 100% Work 'Try Now'.">
+  <meta property="og:image" content="https://fflike.netlify.app/logo.png">
+  <meta property="og:url" content="https://fflike.netlify.app">
+  <meta property="og:type" content="website">
   
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Mono&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary: #4da6ff;
-      --primary-dark: #1a73e8;
-      --bg-dark: #0f0f0f;
-      --bg-light: #f5f5f5;
-      --card-dark: #1e1e1e;
-      --card-light: #ffffff;
-      --text-dark: #ffffff;
-      --text-light: #333333;
-      --success: #25D366;
-      --warning: #ff9500;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-dark);
-      min-height: 100vh;
-      transition: all 0.4s ease;
+   body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
     }
 
     body.light {
-      background: var(--bg-light);
-      color: var(--text-light);
+      background: #f5f5f5;
+      color: #111;
     }
 
-    #app {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+    .hidden { display: none; }
 
-    /* Header & Toggle */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-    }
+    h1 { color: #4da6ff; text-shadow: 0 0 10px #4da6ff; }
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, var(--primary), #ff00aa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 2px 10px rgba(77, 166, 255, 0.3);
-    }
-
-    .mode-toggle {
-      background: var(--card-dark);
-      border: none;
-      padding: 8px 15px;
-      border-radius: 50px;
-      color: var(--primary);
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    body.light .mode-toggle {
-      background: var(--card-light);
-    }
-
-    .mode-toggle:hover {
-      transform: translateY(-2px);
-    }
-
-    /* UID Input Section */
-    .uid-section {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, rgba(77, 166, 255, 0.1), transparent);
-      border-radius: 16px;
-      margin-bottom: 30px;
-      border: 1px dashed var(--primary);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { border-color: var(--primary); }
-      50% { border-color: rgba(77, 166, 255, 0.3); }
-      100% { border-color: var(--primary); }
-    }
-
-    .uid-section h1 {
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      color: var(--primary);
-    }
-
-    .uid-input {
-      width: 100%;
-      max-width: 400px;
-      padding: 12px 20px;
-      border-radius: 50px;
-      border: 2px solid var(--primary);
-      background: transparent;
-      color: var(--text-dark);
-      font-size: 1rem;
-      text-align: center;
-      margin-bottom: 15px;
-      transition: all 0.3s ease;
-    }
-
-    body.light .uid-input {
-      color: var(--text-light);
-    }
-
-    .uid-input:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(77, 166, 255, 0.3);
-    }
-
-    .start-btn {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(77, 166, 255, 0.4);
-    }
-
-    .start-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(77, 166, 255, 0.6);
-    }
-
-    /* Main Content */
-    .main-content {
-      display: none; /* Initially hidden */
-    }
-
-    .uid-display {
-      font-size: 1.2rem;
-      margin: 20px 0;
-      padding: 10px 20px;
-      background: var(--card-dark);
-      border-radius: 50px;
+    .membership-card {
       display: inline-block;
-      border: 2px solid var(--primary);
-    }
-
-    body.light .uid-display {
-      background: var(--card-light);
-    }
-
-    /* Pricing Cards */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin: 40px 0;
-    }
-
-    .pricing-card {
-      background: var(--card-dark);
-      border-radius: 16px;
-      padding: 25px;
+      background: #222;
+      border: 2px solid #4da6ff;
+      border-radius: 12px;
+      margin: 20px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 0 15px rgba(77, 166, 255, 0.5);
+      animation: fadeInUp 0.8s ease-in-out;
       position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(77, 166, 255, 0.2);
     }
 
-    body.light .pricing-card {
-      background: var(--card-light);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(77, 166, 255, 0.2);
-      border-color: var(--primary);
-    }
-
-    .badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      padding: 5px 12px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .badge.vip {
-      background: linear-gradient(45deg, #ff9500, #ffcc00);
+    body.light .membership-card {
+      background: #fff;
       color: #000;
+      border-color: #3399ff;
     }
 
-    .badge.hot {
-      background: linear-gradient(45deg, #ff2d55, #ff9500);
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .vip-badge {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: gold;
+      color: black;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 0 10px gold;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 24px;
+      background-color: #4da6ff;
       color: white;
-    }
-
-    .badge.best {
-      background: linear-gradient(45deg, #34c759, #00c7be);
-      color: white;
-    }
-
-    .pricing-card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-
-    .pricing-card .price {
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 15px 0;
-      background: linear-gradient(45deg, var(--primary), #00c7be);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .pricing-card .features {
-      margin: 20px 0;
-      list-style: none;
-    }
-
-    .pricing-card .features li {
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .pricing-card .features li i {
-      color: var(--primary);
-    }
-
-    .buy-btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      border-radius: 50px;
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s ease;
-      border: none;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
-      margin-top: 15px;
+      transition: all 0.3s ease-in-out;
     }
 
-    .buy-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(77, 166, 255, 0.4);
+    .buy-button:hover {
+      transform: scale(1.1);
+      background-color: #3399ff;
+      box-shadow: 0 0 15px #4da6ff;
     }
 
-    /* Calculator */
     .calculator {
-      background: var(--card-dark);
-      border-radius: 16px;
-      padding: 25px;
-      margin: 40px 0;
-      border: 1px solid rgba(77, 166, 255, 0.2);
+      margin-top: 40px;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      border: 2px solid #4da6ff;
     }
 
     body.light .calculator {
-      background: var(--card-light);
+      background: #fff;
+      color: #000;
+      border-color: #3399ff;
     }
 
-    .calculator h3 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      color: var(--primary);
-      text-align: center;
-    }
+    input[type="range"] { width: 250px; }
 
-    .slider-container {
-      margin: 25px 0;
-    }
-
-    .slider-container label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .range-slider {
-      width: 100%;
-      height: 10px;
-      -webkit-appearance: none;
-      background: linear-gradient(90deg, var(--primary), #00c7be);
-      border-radius: 5px;
-      outline: none;
-    }
-
-    .range-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background: white;
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .price-output {
-      font-size: 1.3rem;
-      text-align: center;
-      margin: 20px 0;
+    .digits {
+      font-family: 'Share Tech Mono', monospace;
       font-weight: 700;
+      font-size: 1.3em;
+      letter-spacing: 1.5px;
+      color: #4da6ff;
     }
 
-    .price-output span {
-      color: var(--primary);
-      font-family: 'Courier New', monospace;
+    body.light .digits {
+      color: #0070cc;
     }
 
-    /* Trust Badges */
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 30px 0;
+    .social-proof {
+      margin-top: 30px;
+      background: #111;
+      padding: 15px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .trust-badge {
-      background: var(--card-dark);
-      padding: 10px 20px;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    body.light .social-proof {
+      background: #fff;
+      color: #000;
+      border-color: #ccc;
     }
 
-    body.light .trust-badge {
-      background: var(--card-light);
+    .whatsapp-badge {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 16px;
+      background: #25D366;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #25D366;
     }
 
-    .trust-badge i {
-      color: var(--primary);
-    }
-
-    /* Testimonials */
-    .testimonials {
-      margin: 50px 0;
-    }
-
-    .testimonials h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: var(--primary);
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .testimonial-card {
-      background: var(--card-dark);
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid rgba(77, 166, 255, 0.2);
-    }
-
-    body.light .testimonial-card {
-      background: var(--card-light);
-    }
-
-    .testimonial-card .stars {
-      color: #ffcc00;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-card .content {
-      font-style: italic;
-      margin-bottom: 15px;
-    }
-
-    .testimonial-card .author {
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    /* WhatsApp Float */
     .whatsapp-float {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--success);
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
       color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.8rem;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-      z-index: 100;
-      transition: all 0.3s ease;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #25D366;
+      z-index: 999;
       text-decoration: none;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 250px;
+      margin-top: 20px;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    #uidSection button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4da6ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
-    .fade-in {
-      animation: fadeIn 0.6s ease forwards;
+    #displayUid {
+      font-size: 1.2em;
+      margin: 20px auto;
+      background: #111;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 2px solid #4da6ff;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .uid-section h1 {
-        font-size: 1.5rem;
-      }
+    body.light #displayUid {
+      background: #fff;
+      color: #000;
+    }
+
+    #modeToggle {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      padding: 8px 16px;
+      background: #4da6ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
     }
   </style>
 </head>
 <body>
-  <div id="app">
-    <!-- Header -->
-    <div class="header">
-      <div class="logo">FFLIKE</div>
-      <button class="mode-toggle" id="modeToggle">
-        <i class="fas fa-moon"></i> Dark Mode
-      </button>
-    </div>
 
-    <!-- UID Input Section -->
-    <div class="uid-section" id="uidSection">
-      <h1>Enter Your Free Fire UID</h1>
-      <input type="text" class="uid-input" id="uidInput" placeholder="e.g. 4840062404" maxlength="10">
-      <button class="start-btn" onclick="start()">Start</button>
-    </div>
+<button id="modeToggle">Light Mode</button>
 
-    <!-- Main Content (Hidden Initially) -->
-    <div class="main-content" id="mainContent">
-      <h1 class="fade-in">🔥 Premium Free Fire Likes</h1>
-      <div class="uid-display" id="displayUid"></div>
+<div id="uidSection">
+  <h1>Enter Your Free Fire UID</h1>
+  <input type="text" id="uidInput" placeholder="e.g. 4840062404" />
+  <br>
+  <button onclick="start()">Start</button>
+</div>
 
-      <!-- Trust Badges -->
-      <div class="trust-badges fade-in">
-        <div class="trust-badge">
-          <i class="fas fa-bolt"></i> Instant Delivery
-        </div>
-        <div class="trust-badge">
-          <i class="fas fa-shield-alt"></i> 100% Safe
-        </div>
-        <div class="trust-badge">
-          <i class="fas fa-users"></i> 500+ Happy Customers
-        </div>
-      </div>
+<div id="mainContent" class="hidden">
+  <h1>🔥 FF LIKE – Buy Free Fire Likes</h1>
+  <div id="displayUid"></div>
 
-      <!-- Pricing Grid -->
-      <div class="pricing-grid">
-        <!-- Free Gift Card -->
-        <div class="pricing-card fade-in" id="giftCard">
-          <h2>🎁 Free 100 Likes</h2>
-          <div class="price">0৳</div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i> 100 Likes</li>
-            <li><i class="fas fa-check"></i> New Users Only</li>
-            <li><i class="fas fa-check"></i> Instant Delivery</li>
-          </ul>
-          <button class="buy-btn" id="btnFree">Get Now</button>
-        </div>
-
-        <!-- Basic Package -->
-        <div class="pricing-card fade-in">
-          <h2>100 Likes</h2>
-          <div class="price">10৳</div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i> 100 Likes</li>
-            <li><i class="fas fa-check"></i> Instant Delivery</li>
-            <li><i class="fas fa-check"></i> One-Time</li>
-          </ul>
-          <button class="buy-btn" id="btn10">Buy Now</button>
-        </div>
-
-        <!-- Popular Package -->
-        <div class="pricing-card fade-in">
-          <div class="badge hot">HOT 🔥</div>
-          <h2>700 Likes</h2>
-          <div class="price">50৳</div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i> 100 Likes/Day</li>
-            <li><i class="fas fa-check"></i> For 7 Days</li>
-            <li><i class="fas fa-check"></i> Auto Delivery</li>
-          </ul>
-          <button class="buy-btn" id="btn50">Buy Now</button>
-        </div>
-
-        <!-- Best Value -->
-        <div class="pricing-card fade-in">
-          <div class="badge best">BEST VALUE ⚡</div>
-          <h2>1500 Likes</h2>
-          <div class="price">100৳</div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i> 100 Likes/Day</li>
-            <li><i class="fas fa-check"></i> For 15 Days</li>
-            <li><i class="fas fa-check"></i> Auto Delivery</li>
-          </ul>
-          <button class="buy-btn" id="btn100">Buy Now</button>
-        </div>
-
-        <!-- VIP Package -->
-        <div class="pricing-card fade-in">
-          <div class="badge vip">VIP 🪙</div>
-          <h2>3000 Likes</h2>
-          <div class="price">180৳</div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i> 100 Likes/Day</li>
-            <li><i class="fas fa-check"></i> For 30 Days</li>
-            <li><i class="fas fa-check"></i> Auto Delivery</li>
-          </ul>
-          <button class="buy-btn" id="btn180">Buy Now</button>
-        </div>
-      </div>
-
-      <!-- Price Calculator -->
-      <div class="calculator fade-in">
-        <h3>⚡ Custom Like Package ⚡</h3>
-        <div class="slider-container">
-          <label for="likeSlider">Select Your Budget:</label>
-          <input type="range" class="range-slider" id="likeSlider" min="10" max="180" step="10" value="10">
-        </div>
-        <div class="price-output" id="priceOutput">
-          Price: <span>10৳ → 100 Likes</span>
-        </div>
-        <button class="buy-btn" id="buyNowBtn">Buy Now</button>
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials fade-in">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="content">Got my likes within 5 minutes! Super fast service. Will buy again.</p>
-            <p class="author">- Arif H.</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="content">The daily auto likes are working perfectly. Very reliable.</p>
-            <p class="author">- Sakib R.</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <p class="content">Good service but took 15 mins to deliver. Still happy!</p>
-            <p class="author">- Nabila K.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="membership-card" id="giftCard">
+    <h2>🎁 Free 100 Likes</h2>
+    <p>100% Free for New Users</p>
+    <a class="buy-button" id="btnFree">Get Now</a>
   </div>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/88001755850613" target="_blank" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <div class="membership-card">
+    <h2>100 Likes</h2>
+    <p>Price: <strong>10৳</strong></p>
+    <p>1 Day · 100 Likes</p>
+    <a class="buy-button" id="btn10">Buy Now</a>
+  </div>
 
-  <!-- Confetti JS (for celebration effect) -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <div class="membership-card">
+    <div class="vip-badge">Hot 🔥</div>
+    <h2>700 Likes</h2>
+    <p>Price: <strong>50৳</strong></p>
+    <p>7 Days · 100 Likes/Day</p>
+    <a class="buy-button" id="btn50">Buy Now</a>
+  </div>
 
-  <script>
-    const priceToLikes = {
-      10: 100, 20: 200, 30: 400, 40: 500, 50: 700,
-      60: 800, 70: 900, 80: 1100, 90: 1200, 100: 1500,
-      110: 1600, 120: 1800, 130: 2000, 140: 2200,
-      150: 2400, 160: 2600, 170: 2800, 180: 3000,
-    };
+  <div class="membership-card">
+    <div class="vip-badge">Best ⚡</div>
+    <h2>1500 Likes</h2>
+    <p>Price: <strong>100৳</strong></p>
+    <p>15 Days · 100 Likes/Day</p>
+    <a class="buy-button" id="btn100">Buy Now</a>
+  </div>
 
-    // UID Validation
-    function isValidUID(uid) {
-      return /^\d{6,10}$/.test(uid); // 6-10 digits
+  <div class="membership-card">
+    <div class="vip-badge">VIP 🪙</div>
+    <h2>3000 Likes</h2>
+    <p>Price: <strong>180৳</strong></p>
+    <p>30 Days · 100 Likes/Day</p>
+    <a class="buy-button" id="btn180">Buy Now</a>
+  </div>
+
+  <div class="calculator">
+    <h3>⚡Price With Like⚡</h3>
+    <label for="likeSlider">Select Price (৳):</label><br>
+    <input type="range" id="likeSlider" min="10" max="180" step="10" value="10">
+    <p id="priceOutput">Price: <span class="digits">10৳ → Likes: 100</span></p>
+    <a id="buyNowBtn" class="buy-button" href="#">Buy Now</a>
+  </div>
+
+  <div class="social-proof">
+    <p>আপনি যদি ৭ দিন, ১০ দিন অথবা ৩০ দিনের Free Fire Like প্যাকেজ ক্রয় করেন, তাহলে আপনার ফ্রি ফায়ার আইডিতে প্রতিদিন ১০০টি করে লাইক অটোমেটিকভাবে পৌঁছে যাবে—একবার কিনলেই নির্ধারিত দিন পর্যন্ত ১০০ লাইক প্রতিদিন যাবে।</p>
+    <ul style="text-align: left; margin: 10px auto; max-width: 400px;">
+      <li>যেমনঃ</li>
+      <li>⦿ ৭ দিনের প্যাকেজে আপনি মোট ৭০০ লাইক,</li>
+      <li>⦿ ১০ দিনের প্যাকেজে মোট ১০০০ লাইক,</li>
+      <li>⦿ এবং ৩০ দিনের প্যাকেজে মোট ৩০০০ লাইক পাবেন।</li>
+    </ul>
+    <p>⦿ প্রতিদিন নির্দিষ্ট সময় অনুযায়ী ১০০ লাইক যুক্ত হবে, আপনাকে আলাদা করে কিছু করতে হবে না।</p>
+    <p>⦿ এই সার্ভিস একদম অটো, নির্ভরযোগ্য ও ঝামেলা-মুক্ত।</p>
+  </div>
+
+  <div class="social-proof">
+    <p>👑 Owner: Ri Fahad</p>
+    <p>⚡ Fast Delivery</p>
+    <p>🔥 100% Real</p>
+    <p>🛡️ Safe & Secure</p>
+    <p>🎯 Real & Active Likes</p>
+    <p> </p>
+    <p> </p>
+    <p>⭐⭐⭐⭐⭐</p>
+  </div>
+
+  <div class="whatsapp-badge">Ri Fahad</div>
+  <a href="https://wa.me/88001755850613" target="_blank" class="whatsapp-float">💬 Chat</a>
+</div>
+
+<script>
+  const priceToLikes = {
+    10: 100, 20: 200, 30: 400, 40: 500, 50: 700,
+    60: 800, 70: 900, 80: 1100, 90: 1200, 100: 1500,
+    110: 1600, 120: 1800, 130: 2000, 140: 2200,
+    150: 2400, 160: 2600, 170: 2800, 180: 3000,
+  };
+
+  function start() {
+    const uid = document.getElementById("uidInput").value.trim();
+    if (!uid) return alert("Please enter your UID.");
+    document.getElementById("uidSection").classList.add("hidden");
+    document.getElementById("mainContent").classList.remove("hidden");
+    document.getElementById("displayUid").innerHTML = `UID: <span class="digits">${uid}</span>`;
+    setLinks(uid);
+
+    if (localStorage.getItem("giftClaimed") === "true") {
+      document.getElementById("giftCard").style.display = "none";
+    }
+  }
+
+  function setLinks(uid) {
+    document.getElementById("btnFree").href = getLink("Free", 100, uid);
+    document.getElementById("btn10").href = getLink(10, 100, uid);
+    document.getElementById("btn50").href = getLink(50, 700, uid);
+    document.getElementById("btn180").href = getLink(180, 3000, uid);
+
+    const slider = document.getElementById("likeSlider");
+    const output = document.getElementById("priceOutput");
+    const buyBtn = document.getElementById("buyNowBtn");
+
+    function update() {
+      const price = parseInt(slider.value);
+      const likes = priceToLikes[price] || 0;
+      output.innerHTML = `Price: <span class="digits">${price}৳ → Likes: ${likes}</span>`;
+      buyBtn.href = getLink(price, likes, uid);
     }
 
-    function start() {
-      const uid = document.getElementById("uidInput").value.trim();
-      
-      if (!isValidUID(uid)) {
-        alert("Please enter a valid Free Fire UID (6-10 digits)");
-        return;
-      }
-      
-      document.getElementById("uidSection").classList.add("hidden");
-      document.getElementById("mainContent").classList.remove("hidden");
-      document.getElementById("displayUid").innerHTML = `UID: <span>${uid}</span>`;
-      setLinks(uid);
+    slider.addEventListener("input", update);
+    update();
+  }
 
-      // Hide free gift if already claimed
-      if (localStorage.getItem("giftClaimed") === "true") {
-        document.getElementById("giftCard").style.display = "none";
-      }
-    }
+  function getLink(price, likes, uid) {
+    return `https://wa.me/88001755850613?text=${encodeURIComponent(`I want to buy ${price}৳ ${likes} likes\nUID: ${uid}`)}`;
+  }
 
-    // Set WhatsApp links for all buttons
-    function setLinks(uid) {
-      document.getElementById("btnFree").onclick = () => {
-        window.open(getLink("Free", 100, uid), "_blank");
-        localStorage.setItem("giftClaimed", "true");
-        document.getElementById("giftCard").style.display = "none";
-        celebrate();
-      };
-      
-      document.getElementById("btn10").onclick = () => {
-        window.open(getLink(10, 100, uid), "_blank");
-        celebrate();
-      };
-      
-      document.getElementById("btn50").onclick = () => {
-        window.open(getLink(50, 700, uid), "_blank");
-        celebrate();
-      };
-      
-      document.getElementById("btn100").onclick = () => {
-        window.open(getLink(100, 1500, uid), "_blank");
-        celebrate();
-      };
-      
-      document.getElementById("btn180").onclick = () => {
-        window.open(getLink(180, 3000, uid), "_blank");
-        celebrate();
-      };
+  document.addEventListener("DOMContentLoaded", () => {
+    const giftBtn = document.getElementById("btnFree");
+    giftBtn?.addEventListener("click", () => {
+      localStorage.setItem("giftClaimed", "true");
+      document.getElementById("giftCard").style.display = "none";
+    });
 
-      // Slider functionality
-      const slider = document.getElementById("likeSlider");
-      const output = document.getElementById("priceOutput");
-      const buyBtn = document.getElementById("buyNowBtn");
-
-      function updateSlider() {
-        const price = parseInt(slider.value);
-        const likes = priceToLikes[price] || 0;
-        output.innerHTML = `Price: <span>${price}৳ → ${likes} Likes</span>`;
-        buyBtn.onclick = () => {
-          window.open(getLink(price, likes, uid), "_blank");
-          celebrate();
-        };
-      }
-
-      slider.addEventListener("input", updateSlider);
-      updateSlider();
-    }
-
-    // Generate WhatsApp link
-    function getLink(price, likes, uid) {
-      const message = `I want to buy ${price}৳ package (${likes} likes)\nUID: ${uid}`;
-      return `https://wa.me/88001755850613?text=${encodeURIComponent(message)}`;
-    }
-
-    // Celebration effect
-    function celebrate() {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-    }
-
-    // Dark/Light mode toggle
     document.getElementById("modeToggle").addEventListener("click", () => {
       document.body.classList.toggle("light");
-      const icon = document.querySelector("#modeToggle i");
-      const text = document.querySelector("#modeToggle");
-      
-      if (document.body.classList.contains("light")) {
-        icon.className = "fas fa-sun";
-        text.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
-      } else {
-        icon.className = "fas fa-moon";
-        text.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
-      }
+      const btn = document.getElementById("modeToggle");
+      btn.textContent = document.body.classList.contains("light") ? "Dark Mode" : "Light Mode";
     });
-
-    // Animate elements on scroll
-    document.addEventListener("DOMContentLoaded", () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll(".pricing-card, .calculator, .testimonials").forEach(el => {
-        observer.observe(el);
-      });
-    });
-  </script>
+  });
+</script>
+  
 </body>
 </html>
