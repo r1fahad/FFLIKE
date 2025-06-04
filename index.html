@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FFLIKE</title>
+
+
   
   <script>
+
     if (location.hostname !== "fflike.netlify.app") {
       location.replace("https://fflike.netlify.app");
     }
+
   </script>
   
 
@@ -52,39 +56,60 @@
   <style>
    body {
     font-family: 'Poppins', sans-serif;
-    background: #0f0f0f;
-    color: #fff;
+    background: #f5f5f5;
+    color: #111;
     text-align: center;
     padding: 20px;
     transition: all 0.3s ease;
     }
 
-    body.light {
-      background: #f5f5f5;
-      color: #111;
+    body.dark {
+      background: #0f0f0f;
+      color: #fff;
     }
 
     .hidden { display: none; }
 
-    h1 { color: #4da6ff; text-shadow: 0 0 10px #4da6ff; }
+    h1 { 
+      color: #0070cc; 
+      text-shadow: 0 0 10px rgba(0, 112, 204, 0.5); 
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px rgba(0, 112, 204, 0.5); }
+      50% { text-shadow: 0 0 20px rgba(0, 112, 204, 0.7); }
+      100% { text-shadow: 0 0 10px rgba(0, 112, 204, 0.5); }
+    }
 
     .membership-card {
       display: inline-block;
-      background: #222;
-      border: 2px solid #4da6ff;
+      background: #fff;
+      border: 2px solid #3399ff;
       border-radius: 12px;
       margin: 20px;
       padding: 20px;
       width: 280px;
-      box-shadow: 0 0 15px rgba(77, 166, 255, 0.5);
+      box-shadow: 0 0 15px rgba(51, 153, 255, 0.5);
       animation: fadeInUp 0.8s ease-in-out;
       position: relative;
+      transition: all 0.3s ease;
     }
 
-    body.light .membership-card {
-      background: #fff;
-      color: #000;
-      border-color: #3399ff;
+    .membership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(51, 153, 255, 0.8);
+    }
+
+    body.dark .membership-card {
+      background: #222;
+      color: #fff;
+      border-color: #4da6ff;
+      box-shadow: 0 0 15px rgba(77, 166, 255, 0.5);
+    }
+
+    body.dark .membership-card:hover {
+      box-shadow: 0 0 25px rgba(77, 166, 255, 0.8);
     }
 
     @keyframes fadeInUp {
@@ -102,71 +127,188 @@
       border-radius: 12px;
       font-weight: bold;
       box-shadow: 0 0 10px gold;
+      animation: glow 2s infinite alternate;
+    }
+
+    .weekly-badge {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      background: #9c27b0;
+      color: white;
+      padding: 3px 5px;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #9c27b0;
+      animation: glow-purple 2s infinite alternate;
+    }
+
+    .monthly-badge {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      color: black;
+      padding: 2px 5px;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 0 10px gold;
+      animation: glow-gold 2s infinite alternate;
+    }
+
+    .save-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      background: #4CAF50;
+      color: white;
+      padding: 1px 3px;
+      border-radius: 4px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #4CAF50;
+      animation: glow-green 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 5px gold; }
+      to { box-shadow: 0 0 15px gold; }
+    }
+
+    @keyframes glow-purple {
+      from { box-shadow: 0 0 5px #9c27b0; }
+      to { box-shadow: 0 0 15px #9c27b0; }
+    }
+
+    @keyframes glow-gold {
+      from { box-shadow: 0 0 5px gold; }
+      to { box-shadow: 0 0 15px gold; }
+    }
+
+    @keyframes glow-green {
+      from { box-shadow: 0 0 5px #4CAF50; }
+      to { box-shadow: 0 0 15px #4CAF50; }
     }
 
     .buy-button {
       display: inline-block;
       margin-top: 12px;
       padding: 12px 24px;
-      background-color: #4da6ff;
+      background-color: #3399ff;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .buy-button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: rotate(45deg);
+      transition: all 0.3s ease;
+    }
+
+    .buy-button:hover::after {
+      left: 100%;
     }
 
     .buy-button:hover {
       transform: scale(1.1);
-      background-color: #3399ff;
-      box-shadow: 0 0 15px #4da6ff;
+      background-color: #0070cc;
+      box-shadow: 0 0 15px #3399ff;
     }
 
     .calculator {
       margin-top: 40px;
-      background: #111;
+      background: #fff;
       padding: 20px;
       border-radius: 10px;
       display: inline-block;
-      border: 2px solid #4da6ff;
+      border: 2px solid #3399ff;
+      transition: all 0.3s ease;
     }
 
-    body.light .calculator {
-      background: #fff;
-      color: #000;
-      border-color: #3399ff;
+    .calculator:hover {
+      box-shadow: 0 0 20px rgba(51, 153, 255, 0.7);
     }
 
-    input[type="range"] { width: 250px; }
+    body.dark .calculator {
+      background: #111;
+      color: #fff;
+      border-color: #4da6ff;
+    }
+
+    input[type="range"] { 
+      width: 250px; 
+      -webkit-appearance: none;
+      height: 8px;
+      background: #ddd;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3399ff;
+      cursor: pointer;
+      box-shadow: 0 0 5px #3399ff;
+      transition: all 0.2s ease;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background: #0070cc;
+      transform: scale(1.1);
+    }
 
     .digits {
       font-family: 'Share Tech Mono', monospace;
       font-weight: 700;
       font-size: 1.3em;
       letter-spacing: 1.5px;
-      color: #4da6ff;
+      color: #0070cc;
+      text-shadow: 0 0 5px rgba(0, 112, 204, 0.5);
     }
 
-    body.light .digits {
-      color: #0070cc;
+    body.dark .digits {
+      color: #4da6ff;
+      text-shadow: 0 0 5px #4da6ff;
     }
 
     .social-proof {
       margin-top: 30px;
-      background: #111;
+      background: #fff;
       padding: 15px;
-      border: 1px solid #333;
+      border: 1px solid #ccc;
       border-radius: 10px;
       max-width: 400px;
       margin-left: auto;
       margin-right: auto;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    body.light .social-proof {
-      background: #fff;
-      color: #000;
-      border-color: #ccc;
+    .social-proof:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark .social-proof {
+      background: #111;
+      color: #fff;
+      border-color: #333;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
 
     .whatsapp-badge {
@@ -178,6 +320,13 @@
       border-radius: 10px;
       font-weight: bold;
       box-shadow: 0 0 10px #25D366;
+      animation: pulse-whatsapp 2s infinite;
+    }
+
+    @keyframes pulse-whatsapp {
+      0% { box-shadow: 0 0 5px #25D366; }
+      50% { box-shadow: 0 0 15px #25D366; }
+      100% { box-shadow: 0 0 5px #25D366; }
     }
 
     .whatsapp-float {
@@ -192,6 +341,19 @@
       box-shadow: 0 0 10px #25D366;
       z-index: 999;
       text-decoration: none;
+      transition: all 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #25D366;
     }
 
     input[type="text"] {
@@ -200,32 +362,61 @@
       border: none;
       width: 250px;
       margin-top: 20px;
+      background: #fff;
+      color: #000;
+      border: 1px solid #3399ff;
+      transition: all 0.3s ease;
+    }
+
+    body.dark input[type="text"] {
+      background: #222;
+      color: #fff;
+      border: 1px solid #4da6ff;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      box-shadow: 0 0 10px #3399ff;
     }
 
     #uidSection button {
       margin-top: 10px;
       padding: 10px 20px;
       font-size: 16px;
-      background: #4da6ff;
+      background: #3399ff;
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #uidSection button:hover {
+      background: #0070cc;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #3399ff;
     }
 
     #displayUid {
       font-size: 1.2em;
       margin: 20px auto;
-      background: #111;
+      background: #fff;
       display: inline-block;
       padding: 10px 20px;
       border-radius: 10px;
-      border: 2px solid #4da6ff;
+      border: 2px solid #3399ff;
+      animation: fadeIn 1s ease;
     }
 
-    body.light #displayUid {
-      background: #fff;
-      color: #000;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    body.dark #displayUid {
+      background: #111;
+      color: #fff;
+      border: 2px solid #4da6ff;
     }
 
     #modeToggle {
@@ -233,22 +424,49 @@
       top: 15px;
       right: 20px;
       padding: 8px 16px;
-      background: #4da6ff;
+      background: #3399ff;
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    #modeToggle:hover {
+      background: #0070cc;
+      transform: scale(1.05);
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: #f00;
+      opacity: 0;
+      z-index: 1000;
+      animation: confetti-fall 5s linear forwards;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-<button id="modeToggle">Light Mode</button>
+<button id="modeToggle">Dark Mode</button>
 
 <div id="uidSection">
   <h1>Enter Your Free Fire UID</h1>
-  <input type="text" id="uidInput" placeholder="e.g. 4840062404" />
+  <input type="text" id="uidInput" placeholder="e.g. 4840062404" maxlength="11" />
   <br>
   <button onclick="start()">Start</button>
 </div>
@@ -271,25 +489,31 @@
   </div>
 
   <div class="membership-card">
+    <div class="weekly-badge">Weekly</div>
     <div class="vip-badge">Hot 🔥</div>
+    <div class="save-badge">Save 20৳</div>
     <h2>700 Likes</h2>
-    <p>Price: <strong>50৳</strong></p>
+    <p>Price: <strong>50৳</strong> <span style="text-decoration: line-through; color: #aaa; font-size: 0.9em;">70৳</span></p>
     <p>7 Days · 100 Likes/Day</p>
     <a class="buy-button" id="btn50">Buy Now</a>
   </div>
 
   <div class="membership-card">
+    <div class="monthly-badge">Monthly Lite</div>
     <div class="vip-badge">Best ⚡</div>
+    <div class="save-badge">Save 50৳</div>
     <h2>1500 Likes</h2>
-    <p>Price: <strong>100৳</strong></p>
+    <p>Price: <strong>100৳</strong> <span style="text-decoration: line-through; color: #aaa; font-size: 0.9em;">150৳</span></p>
     <p>15 Days · 100 Likes/Day</p>
     <a class="buy-button" id="btn100">Buy Now</a>
   </div>
 
   <div class="membership-card">
+    <div class="monthly-badge">Monthly</div>
     <div class="vip-badge">VIP 🪙</div>
+    <div class="save-badge">Save 120৳</div>
     <h2>3000 Likes</h2>
-    <p>Price: <strong>180৳</strong></p>
+    <p>Price: <strong>180৳</strong> <span style="text-decoration: line-through; color: #aaa; font-size: 0.9em;">300৳</span></p>
     <p>30 Days · 100 Likes/Day</p>
     <a class="buy-button" id="btn180">Buy Now</a>
   </div>
@@ -340,6 +564,8 @@
   function start() {
     const uid = document.getElementById("uidInput").value.trim();
     if (!uid) return alert("Please enter your UID.");
+    if (uid.length < 8 || uid.length > 11) return alert("UID must be 8-11 digits long.");
+    
     document.getElementById("uidSection").classList.add("hidden");
     document.getElementById("mainContent").classList.remove("hidden");
     document.getElementById("displayUid").innerHTML = `UID: <span class="digits">${uid}</span>`;
@@ -354,6 +580,7 @@
     document.getElementById("btnFree").href = getLink("Free", 100, uid);
     document.getElementById("btn10").href = getLink(10, 100, uid);
     document.getElementById("btn50").href = getLink(50, 700, uid);
+    document.getElementById("btn100").href = getLink(100, 1500, uid);
     document.getElementById("btn180").href = getLink(180, 3000, uid);
 
     const slider = document.getElementById("likeSlider");
@@ -375,17 +602,40 @@
     return `https://wa.me/88001755850613?text=${encodeURIComponent(`I want to buy ${price}৳ ${likes} likes\nUID: ${uid}`)}`;
   }
 
+  function createConfetti() {
+    const colors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'];
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.width = Math.random() * 10 + 5 + 'px';
+      confetti.style.height = Math.random() * 10 + 5 + 'px';
+      confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.body.appendChild(confetti);
+      
+      setTimeout(() => {
+        confetti.remove();
+      }, 5000);
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const giftBtn = document.getElementById("btnFree");
-    giftBtn?.addEventListener("click", () => {
+    giftBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      createConfetti();
       localStorage.setItem("giftClaimed", "true");
       document.getElementById("giftCard").style.display = "none";
+      setTimeout(() => {
+        window.location.href = giftBtn.href;
+      }, 2000);
     });
 
     document.getElementById("modeToggle").addEventListener("click", () => {
-      document.body.classList.toggle("light");
+      document.body.classList.toggle("dark");
       const btn = document.getElementById("modeToggle");
-      btn.textContent = document.body.classList.contains("light") ? "Dark Mode" : "Light Mode";
+      btn.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
     });
   });
 </script>
