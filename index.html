@@ -5,16 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FFLIKE</title>
 
-
-  
   <script>
-
-    if (location.hostname !== "fflike.netlify.app") {
-      location.replace("https://fflike.netlify.app");
-    }
-
+    if (location.hostname !== "fflike.netlify.app") {
+      location.replace("https://fflike.netlify.app");
+    }
   </script>
-  
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHVCWQNW6N"></script>
@@ -22,7 +17,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-MHVCWQNW6N');
   </script>
 
@@ -54,62 +48,123 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Mono&display=swap" rel="stylesheet" />
   <style>
-   body {
-    font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
-    color: #111;
-    text-align: center;
-    padding: 20px;
-    transition: all 0.3s ease;
+    :root {
+      --primary-color: #3399ff;
+      --primary-dark: #0070cc;
+      --text-color: #111;
+      --bg-color: #f5f5f5;
+      --card-bg: #fff;
+      --card-border: #3399ff;
+      --card-shadow: rgba(51, 153, 255, 0.5);
+      --input-bg: #fff;
+      --input-border: #3399ff;
+      --social-bg: #fff;
+      --social-border: #ccc;
+      --social-shadow: rgba(0, 0, 0, 0.1);
+      --digits-color: #0070cc;
+      --digits-shadow: rgba(0, 112, 204, 0.5);
+      --transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
     }
 
-    body.dark {
-      background: #0f0f0f;
-      color: #fff;
+    [data-theme="dark"] {
+      --primary-color: #4da6ff;
+      --primary-dark: #0077e6;
+      --text-color: #fff;
+      --bg-color: #0f0f0f;
+      --card-bg: #222;
+      --card-border: #4da6ff;
+      --card-shadow: rgba(77, 166, 255, 0.5);
+      --input-bg: #222;
+      --input-border: #4da6ff;
+      --social-bg: #111;
+      --social-border: #333;
+      --social-shadow: rgba(0, 0, 0, 0.3);
+      --digits-color: #4da6ff;
+      --digits-shadow: #4da6ff;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      text-align: center;
+      padding: 20px;
+      transition: var(--transition);
+      min-height: 100vh;
     }
 
     .hidden { display: none; }
 
     h1 { 
-      color: #0070cc; 
-      text-shadow: 0 0 10px rgba(0, 112, 204, 0.5); 
+      color: var(--primary-color); 
+      text-shadow: 0 0 10px var(--digits-shadow); 
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0% { text-shadow: 0 0 10px rgba(0, 112, 204, 0.5); }
-      50% { text-shadow: 0 0 20px rgba(0, 112, 204, 0.7); }
-      100% { text-shadow: 0 0 10px rgba(0, 112, 204, 0.5); }
+      0% { text-shadow: 0 0 10px var(--digits-shadow); }
+      50% { text-shadow: 0 0 20px var(--digits-shadow); }
+      100% { text-shadow: 0 0 10px var(--digits-shadow); }
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      
+      .membership-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 15px auto;
+        padding: 15px;
+      }
+      
+      .calculator {
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+      }
+      
+      input[type="range"] {
+        width: 100%;
+        max-width: 250px;
+      }
+      
+      .social-proof {
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+      }
+    }
+
+    @media (max-width: 350px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      .membership-card h2 {
+        font-size: 1.2rem;
+      }
     }
 
     .membership-card {
       display: inline-block;
-      background: #fff;
-      border: 2px solid #3399ff;
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
       border-radius: 12px;
       margin: 20px;
       padding: 20px;
       width: 280px;
-      box-shadow: 0 0 15px rgba(51, 153, 255, 0.5);
+      box-shadow: 0 0 15px var(--card-shadow);
       animation: fadeInUp 0.8s ease-in-out;
       position: relative;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .membership-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(51, 153, 255, 0.8);
-    }
-
-    body.dark .membership-card {
-      background: #222;
-      color: #fff;
-      border-color: #4da6ff;
-      box-shadow: 0 0 15px rgba(77, 166, 255, 0.5);
-    }
-
-    body.dark .membership-card:hover {
-      box-shadow: 0 0 25px rgba(77, 166, 255, 0.8);
+      box-shadow: 0 0 25px var(--card-shadow);
     }
 
     @keyframes fadeInUp {
@@ -193,13 +248,13 @@
       display: inline-block;
       margin-top: 12px;
       padding: 12px 24px;
-      background-color: #3399ff;
+      background-color: var(--primary-color);
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease-in-out;
+      transition: var(--transition);
       position: relative;
       overflow: hidden;
     }
@@ -213,7 +268,7 @@
       height: 200%;
       background: rgba(255, 255, 255, 0.1);
       transform: rotate(45deg);
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .buy-button:hover::after {
@@ -222,28 +277,22 @@
 
     .buy-button:hover {
       transform: scale(1.1);
-      background-color: #0070cc;
-      box-shadow: 0 0 15px #3399ff;
+      background-color: var(--primary-dark);
+      box-shadow: 0 0 15px var(--primary-color);
     }
 
     .calculator {
       margin-top: 40px;
-      background: #fff;
+      background: var(--card-bg);
       padding: 20px;
       border-radius: 10px;
       display: inline-block;
-      border: 2px solid #3399ff;
-      transition: all 0.3s ease;
+      border: 2px solid var(--card-border);
+      transition: var(--transition);
     }
 
     .calculator:hover {
-      box-shadow: 0 0 20px rgba(51, 153, 255, 0.7);
-    }
-
-    body.dark .calculator {
-      background: #111;
-      color: #fff;
-      border-color: #4da6ff;
+      box-shadow: 0 0 20px var(--card-shadow);
     }
 
     input[type="range"] { 
@@ -261,14 +310,14 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #3399ff;
+      background: var(--primary-color);
       cursor: pointer;
-      box-shadow: 0 0 5px #3399ff;
-      transition: all 0.2s ease;
+      box-shadow: 0 0 5px var(--primary-color);
+      transition: var(--transition);
     }
 
     input[type="range"]::-webkit-slider-thumb:hover {
-      background: #0070cc;
+      background: var(--primary-dark);
       transform: scale(1.1);
     }
 
@@ -277,38 +326,26 @@
       font-weight: 700;
       font-size: 1.3em;
       letter-spacing: 1.5px;
-      color: #0070cc;
-      text-shadow: 0 0 5px rgba(0, 112, 204, 0.5);
-    }
-
-    body.dark .digits {
-      color: #4da6ff;
-      text-shadow: 0 0 5px #4da6ff;
+      color: var(--digits-color);
+      text-shadow: 0 0 5px var(--digits-shadow);
     }
 
     .social-proof {
       margin-top: 30px;
-      background: #fff;
+      background: var(--social-bg);
       padding: 15px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--social-border);
       border-radius: 10px;
       max-width: 400px;
       margin-left: auto;
       margin-right: auto;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      box-shadow: 0 2px 10px var(--social-shadow);
     }
 
     .social-proof:hover {
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    body.dark .social-proof {
-      background: #111;
-      color: #fff;
-      border-color: #333;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 15px var(--social-shadow);
     }
 
     .whatsapp-badge {
@@ -341,7 +378,7 @@
       box-shadow: 0 0 10px #25D366;
       z-index: 999;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       animation: float 3s ease-in-out infinite;
     }
 
@@ -362,49 +399,43 @@
       border: none;
       width: 250px;
       margin-top: 20px;
-      background: #fff;
-      color: #000;
-      border: 1px solid #3399ff;
-      transition: all 0.3s ease;
-    }
-
-    body.dark input[type="text"] {
-      background: #222;
-      color: #fff;
-      border: 1px solid #4da6ff;
+      background: var(--input-bg);
+      color: var(--text-color);
+      border: 1px solid var(--input-border);
+      transition: var(--transition);
     }
 
     input[type="text"]:focus {
       outline: none;
-      box-shadow: 0 0 10px #3399ff;
+      box-shadow: 0 0 10px var(--primary-color);
     }
 
     #uidSection button {
       margin-top: 10px;
       padding: 10px 20px;
       font-size: 16px;
-      background: #3399ff;
+      background: var(--primary-color);
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     #uidSection button:hover {
-      background: #0070cc;
+      background: var(--primary-dark);
       transform: scale(1.05);
-      box-shadow: 0 0 10px #3399ff;
+      box-shadow: 0 0 10px var(--primary-color);
     }
 
     #displayUid {
       font-size: 1.2em;
       margin: 20px auto;
-      background: #fff;
+      background: var(--card-bg);
       display: inline-block;
       padding: 10px 20px;
       border-radius: 10px;
-      border: 2px solid #3399ff;
+      border: 2px solid var(--card-border);
       animation: fadeIn 1s ease;
     }
 
@@ -413,29 +444,50 @@
       to { opacity: 1; }
     }
 
-    body.dark #displayUid {
-      background: #111;
-      color: #fff;
-      border: 2px solid #4da6ff;
-    }
-
+    /* Improved Dark Mode Toggle */
     #modeToggle {
       position: fixed;
       top: 15px;
       right: 20px;
       padding: 8px 16px;
-      background: #3399ff;
+      background: var(--primary-color);
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       z-index: 999;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
     #modeToggle:hover {
-      background: #0070cc;
+      background: var(--primary-dark);
       transform: scale(1.05);
+    }
+
+    #modeToggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-dark);
+      z-index: -1;
+      transform: translateY(100%);
+      transition: var(--transition);
+    }
+
+    #modeToggle:hover::before {
+      transform: translateY(0);
+    }
+
+    #modeToggle i {
+      margin-right: 8px;
+      transition: var(--transition);
     }
 
     .confetti {
@@ -462,7 +514,10 @@
 </head>
 <body>
 
-<button id="modeToggle">Dark Mode</button>
+<button id="modeToggle">
+  <i id="modeIcon">🌙</i>
+  <span id="modeText">Dark Mode</span>
+</button>
 
 <div id="uidSection">
   <h1>Enter Your Free Fire UID</h1>
@@ -561,6 +616,39 @@
     150: 2400, 160: 2600, 170: 2800, 180: 3000,
   };
 
+  // Check for saved theme preference or use preferred color scheme
+  function checkTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      updateToggle(true);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      updateToggle(false);
+    }
+  }
+
+  // Update toggle button state
+  function updateToggle(isDark) {
+    const icon = document.getElementById('modeIcon');
+    const text = document.getElementById('modeText');
+    
+    if (isDark) {
+      icon.textContent = '☀️';
+      icon.style.transform = 'rotate(360deg)';
+      text.textContent = 'Light Mode';
+    } else {
+      icon.textContent = '🌙';
+      icon.style.transform = 'rotate(0deg)';
+      text.textContent = 'Dark Mode';
+    }
+  }
+
+  // Initialize theme
+  document.addEventListener('DOMContentLoaded', checkTheme);
+
   function start() {
     const uid = document.getElementById("uidInput").value.trim();
     if (!uid) return alert("Please enter your UID.");
@@ -621,6 +709,23 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    // Theme toggle functionality
+    document.getElementById("modeToggle").addEventListener("click", () => {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        updateToggle(false);
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        updateToggle(true);
+      }
+    });
+
+    // Gift button functionality
     const giftBtn = document.getElementById("btnFree");
     giftBtn?.addEventListener("click", (e) => {
       e.preventDefault();
@@ -630,12 +735,6 @@
       setTimeout(() => {
         window.location.href = giftBtn.href;
       }, 2000);
-    });
-
-    document.getElementById("modeToggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const btn = document.getElementById("modeToggle");
-      btn.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
     });
   });
 </script>
